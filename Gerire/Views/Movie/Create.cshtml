@@ -1,0 +1,63 @@
+@model Gerire.Models.Movie
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Movie</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="form-group">
+                <label asp-for="Title" class="control-label"></label>
+                <input asp-for="Title" class="form-control" />
+                <span asp-validation-for="Title" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="ReleaseDate" class="control-label"></label>
+                <input asp-for="ReleaseDate" class="form-control" />
+                <span asp-validation-for="ReleaseDate" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="price" class="control-label"></label>
+                <input asp-for="price" class="form-control" />
+                <span asp-validation-for="price" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="gerireId" class="control-label">
+                    Thể loại phim
+                </label>
+
+                <select asp-for="gerireId"
+                        class="form-control"
+                        asp-items="ViewBag.gerireId">
+                    <option value="">-- Chọn thể loại --</option>
+                </select>
+
+                <span asp-validation-for="gerireId"
+                      class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="gerire" class="control-label"></label>
+                <input asp-for="gerire" class="form-control" />
+                <span asp-validation-for="gerire" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
